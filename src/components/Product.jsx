@@ -5,6 +5,8 @@ import "./product.css"
 
 const Product = () => {
     const [data, setData] = useState([]);
+    const [LtH, setLth] = useState([]);
+    const [HtL,setHtL] = useState([]);
     
     useEffect(() => {
       const getData =async ()=>{
@@ -13,21 +15,22 @@ const Product = () => {
           setData(res.data)
       }
       getData();
-      },[])
+      },[LtH,HtL])
 
         
-
+      
         const SortLToH = ()=>{
             let temp = data.sort((a, b)=> {
                 return a.price-b.price;
             })
-            setData(temp)
-          }
+            setLth(temp)
+          
+        }
           const SortHToL = ()=>{
             let temp = data.sort((a, b)=> {
                 return b.price-a.price;
             })
-            setData(temp)
+            setHtL(temp)
           }
       
 
