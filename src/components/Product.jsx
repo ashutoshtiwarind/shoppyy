@@ -15,7 +15,7 @@ const Product = () => {
           setData(res.data)
       }
       getData();
-      },[LtH,HtL])
+      },[])
 
         
       
